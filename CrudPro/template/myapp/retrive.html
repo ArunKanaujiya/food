@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+</head>
+<body>
+    <a href="{% url 'home' %}">Companies_List</a>
+    {{ instance.Company_Name }} Detailes <br>
+    Company_id:{{ instance.id }} <br>
+    Company_logo: <img src="{{ instance.Company_logo.url }}"/><br>
+    Company_city:{{ instance.Company_city }}<br>
+</body>
+</html>

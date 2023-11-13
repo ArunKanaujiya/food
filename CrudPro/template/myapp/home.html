@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>HomePage_CRUD_OPERATIONS</title>
+    </head>
+    <body>
+        <h1>Company List..</h1>
+        <table border='1' align="center">
+            
+        <tr>
+            
+            <th>Company List</th>
+            <th>Updations</th>
+            
+        </tr>
+        
+             {% for obj in orglist %} 
+          <tr>  
+         <td> <a href="{{ obj.get_absolute_url }}"> {{ obj.id }}.{{ obj.Company_Name }}
+                    
+            {% if obj.Company_logo %} <img src='{{obj.Comapy_logo.url}}'/></td>
+            
+                {% endif %} </a>
+         <td>   
+        <a href="{% url 'update' id=obj.id  %} ">Update</a>
+        <a href="{% url 'delete' id=obj.id  %} ">Delete</a>
+         </td></tr>
+            {% endfor %}
+            <a href="/create" class="btn btn-success btn-lg">Add</a>
+            
+            </table>
+    </body>
+</html>
